@@ -77,6 +77,70 @@ class RegionalController extends Controller
             }
     }
 
+    public function regionalById($id)
+    {
+        try {
+            // Create a Guzzle HTTP client
+            $client = new Client();
+    
+            // Define the URLs
+            $url1 = "http://localhost:9010/regional/" . $id;
+            $url2 = "http://localhost:9011/cabang/";
+    
+            // Make the HTTP request for regional data
+            $response1 = $client->request('GET', $url1);
+            $content1 = $response1->getBody()->getContents();
+            $contentArray1 = json_decode($content1, true);
+    
+            // Check if the regional data is retrieved successfully
+            if (!isset($contentArray1['kode_regional'])) {
+                throw new \Exception('Invalid regional data');
+            }
+    
+            // Extract the kode_regional from the regional data
+            $kode_regional = $contentArray1['kode_regional'];
+    
+            // Initialize cabang data and server status
+            $cabang = [];
+            $cabangServerDown = false;
+    
+            // Try to get cabang data
+            try {
+                $response2 = $client->request('GET', $url2);
+                $content2 = $response2->getBody()->getContents();
+                $contentArray2 = json_decode($content2, true);
+    
+                // Check if the contentArray2 has data
+                if (isset($contentArray2)) {
+                    $all_cabang = $contentArray2;
+    
+                    // Filter the cabang based on kode_regional
+                    $cabang = array_filter($all_cabang, function ($s) use ($kode_regional) {
+                        return $s['kode_regional'] == $kode_regional;
+                    });
+                }
+            } catch (\Exception $e) {
+                // If there's an error with the cabang server, set the flag
+                $cabangServerDown = true;
+            }
+    
+            // Return the view with the regional and cabang data
+            return view('regional.detail', [
+                'regional' => $contentArray1,
+                'cabang' => $cabang,
+                'cabangServerDown' => $cabangServerDown,
+                'title' => 'Regional'
+            ]);
+        } catch (\Throwable $th) {
+            // Log the error for debugging purposes
+    
+            // Redirect to the regional route in case of an error
+            return redirect()->route('regional');
+        }
+    }
+    
+    
+
     public function showUpdate($id)
     {
         try {

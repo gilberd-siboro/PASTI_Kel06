@@ -20,7 +20,7 @@ class SektorDetailResource extends JsonResource
             'nama_sektor' => $this->nama_sektor,
             'alamat_sektor' => $this -> alamat_sektor,
             'nama_kepala_sektor' => $this -> nama_kepala_sektor,
-            'id_cabang' => $this-> id_cabang,
+            'kode_cabang' => $this-> kode_cabang,
             'created_at' =>$this->created_at ? date_format($this -> created_at, "Y/m/d H:i:s") : null,
             'updated_at' => $this->updated_at ? date_format($this -> updated_at, "Y/m/d H:i:s") :null,
         ];

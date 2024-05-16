@@ -33,6 +33,7 @@ class SektorController extends Controller
             'nama_sektor'=> 'required|string|max:255',
             'alamat_sektor'=> 'required|string|max:255',
             'nama_kepala_sektor'=> 'required|string|max:255',
+            'kode_cabang'=> 'required|integer|max:255',
         ]);
         $post = Sektor::create($request->all());
         return new SektorDetailResource($post);
@@ -46,6 +47,7 @@ class SektorController extends Controller
             'nama_sektor'=> 'sometimes|required|string|max:255',
             'alamat_sektor'=> 'sometimes|required|string|max:255',
             'nama_kepala_sektor'=> 'sometimes|required|string|max:255',
+            'kode_cabang'=> 'sometimes|required|string|max:255',
         ]);
 
         $sektor->fill($request->only([
@@ -53,6 +55,7 @@ class SektorController extends Controller
             'nama_sektor',
             'alamat_sektor',
             'nama_kepala_sektor',
+            'kode_cabang',
         ]));
         
         $sektor->save();

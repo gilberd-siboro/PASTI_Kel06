@@ -50,6 +50,7 @@ class SektorController extends Controller
                 'nama_sektor' => ['required', 'string', 'max:255'],
                 'alamat_sektor' => ['required', 'string', 'max:255'],
                 'nama_kepala_sektor' => ['required', 'string', 'max:255'],
+                'kode_cabang' => ['required', 'string', 'max:255'],
 
             ]);
     
@@ -59,6 +60,7 @@ class SektorController extends Controller
                 'nama_sektor' => $request->nama_sektor,
                 'alamat_sektor' => $request->alamat_sektor,
                 'nama_kepala_sektor' => $request->nama_kepala_sektor,
+                'kode_cabang' => $request->kode_cabang,
 
             ]);
             
@@ -121,6 +123,7 @@ class SektorController extends Controller
             'nama_sektor' => ['sometimes','required', 'string', 'max:255'],
             'alamat_sektor' => ['sometimes','required', 'string', 'max:255'],
             'nama_kepala_sektor' => ['sometimes','required', 'string', 'max:255'],
+            'kode_cabang' => ['sometimes','required', 'string', 'max:255'],
         ]);
         
         // dd($request->all());
@@ -129,6 +132,7 @@ class SektorController extends Controller
             'nama_sektor' => $request->input('nama_sektor'),
             'alamat_sektor' => $request->input('alamat'),
             'nama_kepala_sektor' => $request->input('nama_kepala_sektor'),
+            'kode_cabang' => $request->input('kode_cabang'),
         ]);
         // Memeriksa apakah permintaan berhasil atau tidak
         if ($response->successful()) {

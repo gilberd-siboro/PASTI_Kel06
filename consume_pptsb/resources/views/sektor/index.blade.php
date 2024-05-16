@@ -35,6 +35,7 @@
                                             <th scope="col">Nama Sektor</th>
                                             <th scope="col">Alamat</th>
                                             <th scope="col">Nama Kepala Sektor</th>
+                                            <th scope="col">Kode Cabang</th>
                                             <th scope="col">Aksi</th>
                                         </tr>
                                     </thead>
@@ -45,6 +46,7 @@
                                             <td>{{ $sektor['nama_sektor']}}</td>
                                             <td>{{ $sektor['alamat_sektor'] }}</td>
                                             <td>{{ $sektor['nama_kepala_sektor'] }}</td>
+                                            <td>{{ $sektor['kode_cabang'] }}</td>
                                             <td>
                                                 <a href="{{ route('sektor.edit', $sektor['id']) }}"><button type="button" class="btn btn-info rounded-pill">Edit</button></a>
                                                 <form action="{{ route('sektor.destroy', $sektor['id']) }}" method="POST" style="display: inline;">

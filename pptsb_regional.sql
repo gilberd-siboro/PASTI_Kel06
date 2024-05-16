@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: May 15, 2024 at 03:19 PM
+-- Generation Time: May 16, 2024 at 07:44 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -43,11 +43,11 @@ CREATE TABLE `regionals` (
 --
 
 INSERT INTO `regionals` (`id`, `created_at`, `updated_at`, `deleted_at`, `kode_regional`, `nama_regional`, `alamat`, `nama_kepala_regional`) VALUES
-(1, '2024-05-03 10:44:45', '2024-05-03 10:44:45', '2024-05-03 10:46:45', '12312', 'asdsa', 'asdas', 'asdas'),
+(1, '2024-05-03 10:44:45', '2024-05-03 10:44:45', '2024-05-03 10:46:45', '3122', 'asdsa', 'asdas', 'asdas'),
 (2, '2024-05-03 10:48:27', '2024-05-12 11:27:07', '2024-05-12 15:40:29', '12312', 'Pematang siantar', 'siantarman', 'Mak eva'),
 (3, '2024-05-05 16:48:36', '2024-05-05 16:48:36', '2024-05-10 16:51:30', '12351', 'asdsaasd', 'asdascs', 'asdasqwe'),
 (4, '2024-05-12 15:34:20', '2024-05-13 10:34:12', '2024-05-13 10:34:19', 'asdjony', 'asd', 'ads', 'asd'),
-(5, '2024-05-12 15:34:57', '2024-05-13 10:34:30', NULL, 'asdsabrutu', 'asdas', 'asdsa', 'asdsadas'),
+(5, '2024-05-12 15:34:57', '2024-05-16 11:25:19', NULL, '3122', 'Siantar', 'Jl. Asahan', 'P. Manik'),
 (6, '2024-05-12 15:43:45', '2024-05-12 15:43:45', '2024-05-12 16:02:39', 'asd', 'asd', 'asdasd', 'asd'),
 (7, '2024-05-12 15:45:38', '2024-05-12 15:45:38', '2024-05-12 16:02:37', 'asdsa', 'asdasqa', 'asdsa', 'asdasda'),
 (8, '2024-05-12 15:46:10', '2024-05-12 15:46:10', '2024-05-12 16:02:36', 'asdsa', 'asd', 'asd', 'asdasd'),

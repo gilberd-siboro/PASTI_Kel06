@@ -36,6 +36,7 @@
                                                 <th scope="col">Nama Cabang</th>
                                                 <th scope="col">Alamat</th>
                                                 <th scope="col">Nama Kepala Cabang</th>
+                                                <th scope="col">Kode Regional</th>
                                                 <th scope="col">Aksi</th>
                                             </tr>
                                         </thead>
@@ -46,6 +47,7 @@
                                                 <td>{{ $cabang['nama_cabang']}}</td>
                                                 <td>{{ $cabang['alamat'] }}</td>
                                                 <td>{{ $cabang['nama_kepala_cabang'] }}</td>
+                                                <td>{{ $cabang['kode_regional'] }}</td>
                                                 <td>
                                                     <a href="{{ route('cabang.edit', $cabang['ID']) }}"><button type="button" class="btn btn-info rounded-pill">Edit</button></a>
                                                     <form action="{{ route('cabang.destroy', $cabang['ID']) }}" method="POST" style="display: inline;">
@@ -53,6 +55,7 @@
                                                         @method('DELETE')
                                                         <button type="submit" class="btn btn-danger rounded-pill" onclick="return confirm('Anda yakin ingin menghapus cabang ini?')">Delete</button>
                                                     </form>
+                                                    <a href="{{ route('cabang.detail', $cabang['ID']) }}"><button type="button" class="btn btn-success rounded-pill">Detail</button></a>
                                                 </td>
                                             </tr>
                                             @endforeach

@@ -38,6 +38,7 @@ Route::middleware(['App\Http\Middleware\Authenticate'])->group(function () {
     // ------- Cabang ----------
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
     Route::get('/cabang/', [CabangController::class, 'getCabangApi'])->name('cabang');
+    Route::get('/cabangdetail/{id}', [CabangController::class, 'cabangById'])->name('cabang.detail');
     Route::get('/addcabang/', [CabangController::class, 'showAdd'])->name('cabang.add');
     Route::post('/postcabang', [CabangController::class, 'addCabang'])->name('cabang.post');
     Route::get('/editcabang/{id}', [CabangController::class, 'showUpdate'])->name('cabang.edit');
@@ -47,6 +48,7 @@ Route::middleware(['App\Http\Middleware\Authenticate'])->group(function () {
     // ------- Regional ------------
 
     Route::get('/regional/', [RegionalController::class, 'getRegionalApi'])->name('regional');
+    Route::get('/regionaldetail/{id}', [RegionalController::class, 'regionalById'])->name('regional.detail');
     Route::get('/addregional/', [RegionalController::class, 'showAdd'])->name('regional.add');
     Route::post('/postregional', [RegionalController::class, 'addRegional'])->name('regional.post');
     Route::get('/editregional/{id}', [RegionalController::class, 'showUpdate'])->name('regional.edit');

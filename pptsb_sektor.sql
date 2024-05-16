@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: May 12, 2024 at 11:49 AM
+-- Generation Time: May 16, 2024 at 07:44 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -33,24 +33,19 @@ CREATE TABLE `sektors` (
   `nama_sektor` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `alamat_sektor` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `nama_kepala_sektor` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `kode_cabang` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `sektors`
 --
 
-INSERT INTO `sektors` (`id`, `kode_sektor`, `nama_sektor`, `alamat_sektor`, `nama_kepala_sektor`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, '1232', 'Lestari Indah', 'Makadame Raya sekitarnya', 'Prabowo Subianto', '2024-05-06 14:16:07', '2024-05-07 09:44:24', '2024-05-07 09:44:24'),
-(2, '4523', 'Nusa Harapan', 'Angasana Raya sekitarnya', 'Susilo Bambang Yudhoyono', '2024-05-07 01:25:46', '2024-05-07 01:25:46', NULL),
-(3, '4523f', 'Dolok Saribu', 'Koramil', 'JR Saragih', '2024-05-07 01:37:53', '2024-05-07 01:37:53', NULL),
-(4, '4524', 'Tiga Dolok', 'Perumnas', 'JR Saragih', '2024-05-07 01:38:52', '2024-05-07 01:38:52', NULL),
-(5, '45245', 'Tapian Dolok', 'Hosana', 'Marihot', '2024-05-07 01:48:14', '2024-05-07 01:48:14', NULL),
-(7, '451245', 'Serbelawan', 'Merdeka sekitarnya', 'Dr Wahidin', '2024-05-07 09:16:15', '2024-05-07 09:16:15', NULL),
-(8, '451245', 'Serbelawan', 'Merdeka sekitarnya', 'Dr Wahidin', '2024-05-07 09:16:47', '2024-05-07 09:16:47', NULL),
-(9, '451245', 'Serbelawan', 'Merdeka sekitarnya', 'Dr Wahidin', '2024-05-07 09:17:00', '2024-05-07 09:17:00', NULL);
+INSERT INTO `sektors` (`id`, `kode_sektor`, `nama_sektor`, `alamat_sektor`, `nama_kepala_sektor`, `kode_cabang`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, '21151', 'Lestari Indah', 'Jl. Makadame Raya', 'A. Aruan', '1442', '2024-05-16 10:18:00', '2024-05-16 10:18:00', NULL),
+(2, '21152', 'Nusa Harapan', 'Jl. Flamboyan Raya', 'B. Pakpahan', '1442', '2024-05-16 10:19:09', '2024-05-16 10:19:09', NULL);
 
 --
 -- Indexes for dumped tables
@@ -70,7 +65,7 @@ ALTER TABLE `sektors`
 -- AUTO_INCREMENT for table `sektors`
 --
 ALTER TABLE `sektors`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -52,6 +52,7 @@
                                                         @method('DELETE')
                                                         <button type="submit" class="btn btn-danger rounded-pill" data-confirm-delete="true">Delete</button>
                                                     </form>
+                                                    <a href="{{ route('regional.detail', $regional['ID']) }}"><button type="button" class="btn btn-success rounded-pill">Detail</button></a>
                                                 </td>
                                             </tr>
                                             @endforeach
